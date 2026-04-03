@@ -160,7 +160,8 @@
 # ifstat_sys.sh {
 	# Sleep time in seconds between two samples. Default is 0.5s, which is a good balance between accuracy and performance.
 	export TMUX_POWERLINE_SEG_IFSTAT_SYS_SLEEP_TIME="0.5"
-	export TMUX_POWERLINE_SEG_IFSTAT_SYS_INTERFACE="enp0s20f0u2u4"
+	# Network interface to monitor. If empty, the default network interface will be used
+	# export TMUX_POWERLINE_SEG_IFSTAT_SYS_INTERFACE="eth0"
 # }
 
 # kubernetes_context.sh {
