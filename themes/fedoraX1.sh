@@ -102,6 +102,7 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 		"ifstat_sys 30 255" \
 		"lan_ip 24 255" \
 		"wan_ip 24 255 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"\
+		"cpu_temperature 166 255" \
 		#"earthquake 3 0" \
 		#"macos_notification_count 29 255" \
 		#"mailcount 9 255" \
