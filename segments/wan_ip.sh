@@ -47,16 +47,16 @@ run_segment() {
 		if [ "$?" -eq "0" ]; then
 			# 提取出： 112.224.167.78(山东-联通)
 			wan_ip=$(echo $raw_response | awk -F'：' '{print $2$3}' | awk -F' ' '{printf "%s(%s-%s)\n", $1, $(NF-1), $NF}')
-
-			echo "${wan_ip}" > $tmp_file
-		elif [ -f "${tmp_file}" ]; then
-			wan_ip=$(cat "$tmp_file")
+		else
+			wan_ip=""
 		fi
+
+		echo "${wan_ip}" > $tmp_file
 	fi
 
-	if [ -n "$wan_ip" ]; then
+	# if [ -n "$wan_ip" ]; then
 		echo "#[fg=$TMUX_POWERLINE_SEG_WAN_IP_SYMBOL_COLOUR]${TMUX_POWERLINE_SEG_WAN_IP_SYMBOL}#[fg=$TMUX_POWERLINE_CUR_SEGMENT_FG]${wan_ip}"
-	fi
+	# fi
 
 	return 0
 }
